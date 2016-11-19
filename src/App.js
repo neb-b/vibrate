@@ -5,10 +5,11 @@ import './style/app.css';
 
 class App extends Component {
   render() {
+    console.log("this", this.props)
     return (
       <div className="app">
         <Header />
-        <h2>Hello World</h2>
+        { this.props.children }
         <Footer />
       </div>
     );
