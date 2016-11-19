@@ -5,7 +5,6 @@ import './style/app.css';
 
 class App extends Component {
   render() {
-    console.log("this", this.props)
     return (
       <div className="app">
         <Header />
