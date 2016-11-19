@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
-import injectTapEventPlugin from 'react-tap-event-plugin'
-injectTapEventPlugin()
-
-import Header from './components/header'
-import Footer from './components/footer'
+import Header from './components/global/header'
+import Footer from './components/global/footer'
 import './style/app.css';
 
 class App extends Component {
