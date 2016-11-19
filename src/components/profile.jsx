@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import EventHistory from '../events/event_history'
+import EventHistory from './events/event_history'
 
 class Profile extends Component {
   render() {

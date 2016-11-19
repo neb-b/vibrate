@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Events from '../../src/components/events'
+import Profile from '../../src/components/profile'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
-  ReactDOM.render(<Events />, div)
-});
+  ReactDOM.render(<Profile />, div)
+})
