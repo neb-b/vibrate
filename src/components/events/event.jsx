@@ -1,14 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Link } from 'react-router'
 
-class Event extends Component {
-  render() {
-    console.log("event", this.props)
-    return (
-      <div className="event">
-        <h2>Event</h2>
+const Event = ({ _id, name }) => {
+  return (
+    <Link to={`events/${_id}`}>
+      <div key={_id} className="event">
+          <h2>Name: { name }</h2>
+          <p>Id: { _id }</p>
       </div>
-    )
-  }
+    </Link>
+  )
 }
 
 export default Event
