@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Event = ({ params: { eventId }}) => {
+const Event = ({ params }) => {
+  let eventId
+  if (params && params.eventId) {
+    eventId = params.eventId
+  }
   return (
-    <div>Event: { eventId }</div>
+    <div>Event: { eventId && eventId }</div>
   )
 }
 
