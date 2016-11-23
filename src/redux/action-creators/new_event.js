@@ -2,20 +2,14 @@ import {
   NEW_EVENT,
   NEW_EVENT_ERROR
 } from '../constants/constants'
+import { postJson } from './fetch'
 
 async function newEvent ({ name }) {
-  const payload = { name }
-  console.log("new event", payload)
+  const payload = { name: "event from frontend" }
   try {
-    const res = await fetch('http://localhost:3000/api/events', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(payload)
-    })
-
+    const res = await postJson('/events', payload)
     const data = await res.json()
+
     console.log("success", data)
 
     return {
