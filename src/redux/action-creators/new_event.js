@@ -9,11 +9,10 @@ async function newEvent ({ name }) {
   try {
     const res = await fetch('http://localhost:3000/api/events', {
       method: 'POST',
-      header: {
-        accept: 'application/json',
+      headers: {
         'Content-Type': 'application/json'
       },
-      body: payload
+      body: JSON.stringify(payload)
     })
 
     const data = await res.json()
