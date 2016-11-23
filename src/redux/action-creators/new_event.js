@@ -1,26 +1,22 @@
-import {
-  NEW_EVENT,
-  NEW_EVENT_ERROR
-} from '../constants/constants'
+import { createAction } from './create-action'
 import { postJson } from './fetch'
+import {
+  NEW_EVENT_ERROR,
+  NEW_EVENT_REQUEST,
+  NEW_EVENT_SUCCESS
+} from '../constants/constants'
 
-async function newEvent ({ name }) {
-  const payload = { name: "event from frontend" }
-  try {
-    const res = await postJson('/events', payload)
-    const data = await res.json()
+export function newEvent({ name }) {
+  const payload = { name }
 
-    console.log("success", data)
-
-    return {
-      type: NEW_EVENT,
-      payload: { _id: data._id }
-    }
-  } catch (error) {
-    return {
-      type: NEW_EVENT_ERROR,
-      payload: { error }
-    }
+  return function (dispatch) {
+    dispatch(createAction(NEW_EVENT_REQUEST))
+    return postJson('/events', payload)
+      .then(res => res.json())
+      .then(data =>
+        dispatch(createAction(NEW_EVENT_SUCCESS, { data }))
+      )
+      .catch(error => dispatch(createAction(NEW_EVENT_ERROR, { error })))
   }
 }
 
