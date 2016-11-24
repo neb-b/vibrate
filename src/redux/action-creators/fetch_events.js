@@ -1,4 +1,4 @@
-import { createAction } from './create-action'
+import { createAction } from './create_action'
 import { getJson } from './fetch'
 import {
   GET_EVENTS_ERROR,
