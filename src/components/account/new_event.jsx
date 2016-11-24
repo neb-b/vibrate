@@ -4,7 +4,7 @@ const NewEvent = (props) => {
   console.log("props", props)
   return (
     <div>
-      event name:
+      event name: <input />
       <button onClick={() => props.newEvent({ name: "sean" })}>
         New Event
       </button>
