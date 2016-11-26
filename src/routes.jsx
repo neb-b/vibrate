@@ -3,6 +3,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import App from './app'
 
 import Home from './components/home'
+import Login from './connected/login.connected'
 import Events from './connected/events.connected'
 import Event from './components/event'
 import EventHistory from './components/profile/event_history'
@@ -16,6 +17,8 @@ const Routes = () => (
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
+
+      <Route path="/login" component={Login} />
 
       <Route path="/events" component={Events} />
       <Route path="/events/:eventId" component={Event} />
