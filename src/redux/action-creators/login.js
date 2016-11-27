@@ -6,7 +6,8 @@ import {
   LOGIN_SUCCESS
 } from '../constants/constants'
 
-export function fetchEvents() {
+const login = () => {
+  console.log("start login")
   return function (dispatch) {
     dispatch(createAction(LOGIN_REQUEST))
     return postJson('/login')
@@ -18,4 +19,4 @@ export function fetchEvents() {
   }
 }
 
-export default fetchEvents
+export default login

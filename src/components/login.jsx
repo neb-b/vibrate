@@ -1,13 +1,12 @@
 import React from 'react'
 
 const Login = (props) => {
-  console.log("props", props)
-  const { login } = props
+  const { handleSubmit } = props
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <h3>Login</h3>
-      <button onClick={login}>Login</button>
-    </div>
+      <button>Login</button>
+    </form>
   )
 }
 

@@ -5,7 +5,7 @@ import events from './events'
 import login from './login'
 
 export default combineReducers({
-  form: reduxFormReducer,
   events,
-  login
+  login,
+  form: reduxFormReducer
 })

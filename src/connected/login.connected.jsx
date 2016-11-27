@@ -1,8 +1,8 @@
-import { connect } from 'react-redux'
+import { reduxForm } from 'redux-form'
 import Login from '../components/login'
 import login from '../redux/action-creators/login'
 
-export default connect(
-  null,
-  { login }
-)(Login)
+export default reduxForm({
+  form: 'login',
+  onSubmit: login
+})(Login)
